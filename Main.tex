@@ -1,32 +1,26 @@
-\documentclass[14pt]{extarticle}
-%\usepackage[fontset=windowsnew]{ctex}
-\usepackage{fontspec,xunicode,xltxtra}  % for XeTeX
-\usepackage[BoldFont,SlantFont,CJKnumber,CJKchecksingle]{xeCJK} % \CJKnumber{12345}: 一万二千三百四十五
-\defaultfontfeatures{Mapping=tex-text} %如果没有它，会有一些 tex 特殊字符无法正常使用，比如连字符。
-% 中文断行
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\documentclass[14pt,a4paper]{extarticle}
+\usepackage{xeCJK}
+\xeCJKsetup{CJKmath=true,CheckSingle=true}
+\setCJKmainfont[AutoFakeBold,AutoFakeSlant]{KaiTi} %默认字体：楷体
+\setCJKmonofont{FangSong} %设置\ttfamily字体
+\parindent=2em
 
-\setCJKmainfont{KaiTi} %默认字体：楷体
-
-%\usepackage{nsfc}
-\usepackage{times}
 \usepackage{graphicx}
 \graphicspath{{figures/}}
-\usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{subfigure}
 \usepackage{overpic}
-\usepackage[pagebackref=false,breaklinks=true,letterpaper=true,colorlinks=true,bookmarks=false,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{pifont}  % \ding{}
+\usepackage{amsmath,amssymb,amsfonts} % math
+\usepackage[pagebackref=false,breaklinks=true,colorlinks=true,bookmarks=false,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
 \usepackage{geometry}
-\geometry{top=2.54cm,bottom=2.54cm,left=3.2cm,right=3.2cm} %页边距
+%\geometry{top=2.54cm,bottom=2.54cm,left=3.2cm,right=3.2cm} %NSFC页边距
+\geometry{top=2cm,bottom=2.2cm,left=2cm,right=2cm} %页边距
 \usepackage{leading}
 \leading{22pt} %设置全文行间距
 \usepackage{setspace} %调整部分行间距
+\usepackage{enumitem} %调整item
+\usepackage[normalem]{ulem} %各种下划线
 
-\newcommand{\cmm}[1]{\textcolor[rgb]{0,0.6,0}{CMM: #1}}
-\newcommand{\todo}[1]{{\textcolor{red}{\bf [#1]}}}
-\newcommand{\mypara}[1]{\paragraph{#1.}}
 \newcommand{\alert}[1]{\textcolor[rgb]{0.0625,0.4453,0.7383}{#1}}
 \newcommand{\NsfcNote}[1]{\begin{spacing}{1.5} \alert{#1} \end{spacing}}
 \newcommand{\NsfcSubNote}[1]{\alert{#1} \par}
@@ -34,7 +28,7 @@
 
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
-\renewcommand\refname{\normalfont\selectfont\normalsize \textbf{参考文献}}
+\renewcommand\refname{\normalfont\selectfont\normalsize \textbf{主要参考文献}}
 \newcommand{\figref}[1]{图\ref{#1}}
 \newcommand{\tabref}[1]{表\ref{#1}}
 \newcommand{\equref}[1]{式\ref{#1}}
@@ -49,8 +43,8 @@
 \end{spacing}
 
 %%%%%%%%%% BODY %%%%%%%%%%
-参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。\\
-\NsfcInlineNote{\textbf{请勿删除或改动下述提纲标题及括号中的文字。}}
+%参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。\\
+%\NsfcInlineNote{\textbf{请勿删除或改动下述提纲标题及括号中的文字。}}
 
 %%%%%%%%%%%%%%%%%%%%
 \NsfcNote{\textbf{（一）立项依据与研究内容}（4000-8000字）：}
@@ -58,7 +52,7 @@
 \NsfcSubNote{\textbf{1．项目的立项依据}（研究意义、国内外研究现状及发展动态分析，需结合科学研究发展趋势来论述科学意义；或结合国民经济和社会发展中迫切需要解决的关键科技问题来论述其应用前景。附主要参考文献目录）；}
 
 \textbf{人类}很容易地判断图像中的\emph{显著性区域}，并注意到图像的重要部分。由于我们可以通过显著性区域来优先分配图像分析与合成所需的计算资源，所以通过计算来检测图像的显著性区域意义重大。提取出的\textit{显著性图像}可以广泛应用于许多计算机视觉领域的应用，包括对兴趣目标物体图像分割~\cite{06TCSVT/han_unsupervised,06josa/KoN_InterestSegmentation}，目标识别~\cite{04cvpr/RutishauserWWKP}，自适应压缩~\cite{00CE/christopoulos_jpeg}，内容感知图像编辑~\cite{TOG/Wang08,09cgf/ZhangC,wu-2010-resizing,10vc/Ding}，和图像检索~\cite{tog09/ChenCT_Sketch2Photo}等，如\figref{fig:teaser}。
-\begin{figure}[h]
+\begin{figure}[!ht]
   \centering
   \begin{overpic}[width=0.6\columnwidth]{teaser.jpg}
   \end{overpic}
@@ -67,7 +61,7 @@
 \end{figure}
 
 显著性源于视觉的独特性、不可预测性、稀缺性以及奇异性，并且是由颜色、梯度、边缘、边界等图像属性所致。基于全局对比度的显著性区域计算方法用一个区域和整个图像的对比度来计算显著性值。参见\tabref{tab:TimeEfficency}。
-\begin{table}
+\begin{table}[!ht]
   \centering
   \begin{tabular}{l|c|c|c|c|c|c|c} \hline\hline
     时间(秒) & 0.611  & 0.070 & 1.614  & 0.064  & 0.016 & 0.109 &  53.1 \\ \hline
@@ -81,7 +75,9 @@
 
 {\small
 \bibliographystyle{ieee-nsfc}
+\begin{spacing}{1}
 \bibliography{Main}
+\end{spacing}
 }
 
 %%%%%%%%%%
