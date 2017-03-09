@@ -14,7 +14,7 @@
 \usepackage[pagebackref=false,breaklinks=true,colorlinks=true,bookmarks=false,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
 \usepackage{geometry}
 %\geometry{top=2.54cm,bottom=2.54cm,left=3.2cm,right=3.2cm} %NSFC页边距
-\geometry{top=2cm,bottom=2.2cm,left=2cm,right=2cm} %页边距
+\geometry{top=2cm,bottom=2.2cm,left=2cm,right=2cm} %自定义页边距
 \usepackage{leading}
 \leading{22pt} %设置全文行间距
 \usepackage{setspace} %调整部分行间距
@@ -43,15 +43,15 @@
 \end{spacing}
 
 %%%%%%%%%% BODY %%%%%%%%%%
-%参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。\\
-%\NsfcInlineNote{\textbf{请勿删除或改动下述提纲标题及括号中的文字。}}
+参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。\\
+\NsfcInlineNote{\textbf{请勿删除或改动下述提纲标题及括号中的文字。}}
 
 %%%%%%%%%%%%%%%%%%%%
 \NsfcNote{\textbf{（一）立项依据与研究内容}（4000-8000字）：}
 %%%%%%%%%%
 \NsfcSubNote{\textbf{1．项目的立项依据}（研究意义、国内外研究现状及发展动态分析，需结合科学研究发展趋势来论述科学意义；或结合国民经济和社会发展中迫切需要解决的关键科技问题来论述其应用前景。附主要参考文献目录）；}
 
-\textbf{人类}很容易地判断图像中的\emph{显著性区域}，并注意到图像的重要部分。由于我们可以通过显著性区域来优先分配图像分析与合成所需的计算资源，所以通过计算来检测图像的显著性区域意义重大。提取出的\textit{显著性图像}可以广泛应用于许多计算机视觉领域的应用，包括对兴趣目标物体图像分割~\cite{06TCSVT/han_unsupervised,06josa/KoN_InterestSegmentation}，目标识别~\cite{04cvpr/RutishauserWWKP}，自适应压缩~\cite{00CE/christopoulos_jpeg}，内容感知图像编辑~\cite{TOG/Wang08,09cgf/ZhangC,wu-2010-resizing,10vc/Ding}，和图像检索~\cite{tog09/ChenCT_Sketch2Photo}等，如\figref{fig:teaser}。
+\textbf{人类}很容易地判断图像中的\emph{显著性区域}，并注意到图像的重要部分。由于我们可以通过显著性区域来优先分配图像分析与合成所需的计算资源，所以通过计算来检测图像的显著性区域意义重大。提取出的\textit{显著性图像}可以广泛应用于许多计算机视觉领域的应用，包括对兴趣目标物体图像分割\cite{06TCSVT/han_unsupervised,06josa/KoN_InterestSegmentation}，目标识别\cite{04cvpr/RutishauserWWKP}，自适应压缩\cite{00CE/christopoulos_jpeg}，内容感知图像编辑\cite{TOG/Wang08,09cgf/ZhangC,wu-2010-resizing,10vc/Ding}，和图像检索\cite{tog09/ChenCT_Sketch2Photo}等，如\figref{fig:teaser}。
 \begin{figure}[!ht]
   \centering
   \begin{overpic}[width=0.6\columnwidth]{teaser.jpg}
@@ -71,7 +71,7 @@
   \label{tab:TimeEfficency}
 \end{table}
 
-视觉显著性和我们如何感知、处理视觉刺激紧密相关。中文参考文献~\cite{huangzhiyong2011}。
+视觉显著性和我们如何感知、处理视觉刺激紧密相关\cite{huangzhiyong2011}。
 
 {\small
 \bibliographystyle{ieee-nsfc}
@@ -83,18 +83,40 @@
 %%%%%%%%%%
 \NsfcSubNote{\textbf{2．项目的研究内容、研究目标，以及拟解决的关键科学问题}（此部分为重点阐述内容）；}
 
+\noindent\textbf{研究内容}
+\begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=20pt,listparindent=\parindent]
+\item[\ding{172}] 第一条
+\item[\ding{173}] 第二条
+\end{enumerate}
+
+\bigbreak
+
+\noindent\textbf{研究目标}
+
+\bigbreak
+
+\noindent\textbf{拟解决的关键科学问题}
 
 %%%%%%%%%%
 \NsfcSubNote{\textbf{3．拟采取的研究方案及可行性分析}（包括研究方法、技术路线、实验手段、关键技术等说明）；}
 
+\noindent\textbf{拟采取的研究方案}
+
+\bigbreak
+
+\noindent\textbf{可行性分析}
 
 %%%%%%%%%%
 \NsfcSubNote{\textbf{4．本项目的特色与创新之处；}}
 
-
 %%%%%%%%%%
 \NsfcSubNote{\textbf{5．年度研究计划及预期研究结果}（包括拟组织的重要学术交流活动、国际合作与交流计划等）。}
 
+\noindent\textbf{年度研究计划}
+
+\bigbreak
+
+\noindent\textbf{预期研究成果}
 
 %%%%%%%%%%%%%%%%%%%%
 \NsfcNote{\textbf{（二）研究基础与工作条件}}
@@ -102,16 +124,20 @@
 \NsfcSubNote{\textbf{1．研究基础}（与本项目相关的研究工作积累和已取得的研究工作成绩）；}
 
 
+
 %%%%%%%%%%
 \NsfcSubNote{\textbf{2．工作条件}（包括已具备的实验条件，尚缺少的实验条件和拟解决的途径，包括利用国家实验室、国家重点实验室和部门重点实验室等研究基地的计划与落实情况）；}
+
 
 
 %%%%%%%%%%
 \NsfcSubNote{\textbf{3．正在承担的与本项目相关的科研项目情况}（申请人和项目组主要参与者正在承担的与本项目相关的科研项目情况，包括国家自然科学基金的项目和国家其他科技计划项目，要注明项目的名称和编号、经费来源、起止年月、与本项目的关系及负责的内容等）；}
 
 
+
 %%%%%%%%%%
 \NsfcSubNote{\textbf{4．完成国家自然科学基金项目情况}（对申请人负责的前一个已结题科学基金项目（项目名称及批准号）完成情况、后续研究进展及与本申请项目的关系加以详细说明。另附该已结题项目研究工作总结摘要（限500字）和相关成果的详细目录）。}
+
 
 
 %%%%%%%%%%%%%%%%%%%%
@@ -119,17 +145,21 @@
 %%%%%%%%%%
 \NsfcSubNote{1. 申请人同年申请不同类型的国家自然科学基金项目情况（列明同年申请的其他项目的项目类型、项目名称信息，并说明与本项目之间的区别与联系）。}
 
+无。
 
 %%%%%%%%%%
 \NsfcSubNote{2. 具有高级专业技术职务（职称）的申请人或者主要参与者是否存在同年申请或者参与申请国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，申请或参与申请的其他项目的项目类型、项目名称、单位名称、上述人员在该项目中是申请人还是参与者，并说明单位不一致原因。}
 
+无。
 
 %%%%%%%%%%
 \NsfcSubNote{3. 具有高级专业技术职务（职称）的申请人或者主要参与者是否存在与正在承担的国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，正在承担项目的批准号、项目类型、项目名称、单位名称、起止年月，并说明单位不一致原因。}
 
+无。
 
 %%%%%%%%%%
 \NsfcSubNote{4. 其他。}
 
+无。
 
 \end{document}
